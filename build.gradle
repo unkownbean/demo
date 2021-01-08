@@ -5,6 +5,13 @@ plugins {
 group 'com.summer'
 version '1.0-SNAPSHOT'
 
+task sourceJar (type:Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+artifacts {
+    archives sourceJar
+}
 repositories {
     mavenCentral()
 }
